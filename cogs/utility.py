@@ -305,21 +305,18 @@ class Utility(commands.Cog):
         """Shows information about this bot."""
         embed = discord.Embed(color=self.bot.main_color, timestamp=datetime.utcnow())
         embed.set_author(
-            name="Modmail - About",
-            icon_url=self.bot.user.avatar_url,
-            url="https://discord.gg/F34cRU8",
+            name="NP",
+            icon_url="https://cdn.discordapp.com/avatars/887296580955283537/a_092a289ac8971652cc582a0da32a1f7c.gif?size=240%22%20alt=%22%20%22%20class=%22avatar-b5OQ1N",
+            url="https://itsnp.cf",
         )
         embed.set_thumbnail(url=self.bot.user.avatar_url)
 
-        desc = "This is an open source Discord bot that serves as a means for "
-        desc += "members to easily communicate with server administrators in "
-        desc += "an organised manner."
+        desc = "This is just the basic heroku modmail thing and will be replaced with dylans bot hopefully ASAP "
         embed.description = desc
 
         embed.add_field(name="Uptime", value=self.bot.uptime)
         embed.add_field(name="Latency", value=f"{self.bot.latency * 1000:.2f} ms")
         embed.add_field(name="Version", value=f"`{self.bot.version}`")
-        embed.add_field(name="Authors", value="`kyb3r`, `Taki`, `fourjr`")
         embed.add_field(name="Hosting Method", value=self.bot.hosting_method.name)
 
         changelog = await Changelog.from_url(self.bot)
@@ -334,23 +331,40 @@ class Utility(commands.Cog):
             footer = "You are up to date with the latest version."
 
         embed.add_field(
-            name="Want Modmail in Your Server?",
-            value="Follow the installation guide on [GitHub](https://github.com/kyb3r/modmail/) "
-            "and join our [Discord server](https://discord.gg/F34cRU8)!",
+            name="View our website!",
+            value="Check out our DCA website! "
+            "[`doubleclickadvertising.com`](https://doubleclickadvertising.com)",
             inline=False,
         )
 
-        embed.add_field(
-            name="Support the Developers",
-            value="This bot is completely free for everyone. We rely on kind individuals "
-            "like you to support us on [`Patreon`](https://patreon.com/kyber) (perks included) "
-            "to keep this bot free forever!",
-            inline=False,
+        embed.set_footer(text=footer)
+        await ctx.send(embed=embed)
+        
+   
+    @commands.command(aliases=["en-pee"])
+    @checks.has_permissions(PermissionLevel.REGULAR)
+    @utils.trigger_typing
+    async def np(self, ctx):
+        """NP"""
+        embed = discord.Embed(color=self.bot.main_color, timestamp=datetime.utcnow())
+        embed.set_author(
+            name="NP",
+            icon_url="https://cdn.discordapp.com/avatars/887296580955283537/a_092a289ac8971652cc582a0da32a1f7c.gif?size=240%22%20alt=%22%20%22%20class=%22avatar-b5OQ1N",
+            url="https://itsnp.cf",
         )
+        embed.set_thumbnail(url=self.bot.user.avatar_url)
+
+        desc = "hehehe"
+        embed.description = desc
+
+        embed.add_field(name="hi", value="idk")
+
+        footer = "en pee."
 
         embed.add_field(
-            name="Project Sponsors",
-            value=f"Checkout the people who supported Modmail with command `{self.bot.prefix}sponsors`!",
+            name="View our website!",
+            value="Check out our DCA website! "
+            "[`doubleclickadvertising.com`](https://doubleclickadvertising.com)",
             inline=False,
         )
 
